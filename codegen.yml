@@ -1,0 +1,26 @@
+overwrite: true
+schema: "http://localhost:8000/graphql"
+documents: "**/*.graphql"
+generates:
+  generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+#      reactApolloVersion: 3
+      withHooks: true
+      withRefetchFn: true
+#      withComponent: false
+#      apolloReactCommonImportFrom: "@apollo/client"
+#      apolloReactHocImportFrom: "@apollo/client/react/hoc"
+#      apolloReactHooksImportFrom: "@apollo/client"
+  generated/modules.d.ts:
+    plugins:
+      - "typescript-graphql-files-modules"
+  generated/fragment-matcher.json:
+    plugins:
+      - "fragment-matcher"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

@@ -1,0 +1,35 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Mutation {
+    logout: Boolean!
+}
+
+type Offer {
+    email: String!
+    id: ID!
+    longDescription: String!
+    name: String!
+    phoneNumber: String
+    shortDescription: String!
+}
+
+type Query {
+    currentUser: User
+    user(userId: Float!): User
+}
+
+type User {
+    email: String
+    firstName: String!
+    id: ID!
+    lastName: String!
+    phoneNumber: String
+    strategyType: String!
+    type: String!
+    username: String!
+}
